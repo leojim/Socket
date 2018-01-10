@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\socket\cline\cline\bin\Debug\cline.exe.config
+C:\Users\Administrator\Desktop\socket\cline\cline\bin\Debug\cline.exe
+C:\Users\Administrator\Desktop\socket\cline\cline\bin\Debug\cline.pdb
+C:\Users\Administrator\Desktop\socket\cline\cline\obj\Debug\cline.Login.resources
+C:\Users\Administrator\Desktop\socket\cline\cline\obj\Debug\cline.Man.resources
+C:\Users\Administrator\Desktop\socket\cline\cline\obj\Debug\cline.Properties.Resources.resources
+C:\Users\Administrator\Desktop\socket\cline\cline\obj\Debug\cline.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\socket\cline\cline\obj\Debug\cline.exe
+C:\Users\Administrator\Desktop\socket\cline\cline\obj\Debug\cline.pdb

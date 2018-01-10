@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "server", "server\server.csproj", "{B568E0CC-0259-438B-BEF0-FAA6FBC79FEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cline", "..\cline\cline\cline.csproj", "{6D9BBA8A-46A0-4160-AA3F-C6DA1E74E7DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B568E0CC-0259-438B-BEF0-FAA6FBC79FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B568E0CC-0259-438B-BEF0-FAA6FBC79FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B568E0CC-0259-438B-BEF0-FAA6FBC79FEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D9BBA8A-46A0-4160-AA3F-C6DA1E74E7DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D9BBA8A-46A0-4160-AA3F-C6DA1E74E7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D9BBA8A-46A0-4160-AA3F-C6DA1E74E7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D9BBA8A-46A0-4160-AA3F-C6DA1E74E7DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

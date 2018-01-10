@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace server
+namespace cline
 {
     static class Program
     {
@@ -16,7 +16,8 @@ namespace server
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Man());
+            Application.Run(new Login());
+            Environment.Exit(0);
         }
     }
 }

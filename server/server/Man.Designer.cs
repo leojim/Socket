@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.messagebox = new System.Windows.Forms.RichTextBox();
-            this.userlistbox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ip = new System.Windows.Forms.TextBox();
@@ -38,8 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.toolStripContainer1.SuspendLayout();
+            this.userlistbox = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // messagebox
@@ -49,15 +47,6 @@
             this.messagebox.Size = new System.Drawing.Size(535, 309);
             this.messagebox.TabIndex = 0;
             this.messagebox.Text = "";
-            // 
-            // userlistbox
-            // 
-            this.userlistbox.FormattingEnabled = true;
-            this.userlistbox.ItemHeight = 12;
-            this.userlistbox.Location = new System.Drawing.Point(553, 60);
-            this.userlistbox.Name = "userlistbox";
-            this.userlistbox.Size = new System.Drawing.Size(102, 328);
-            this.userlistbox.TabIndex = 1;
             // 
             // label1
             // 
@@ -131,24 +120,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // toolStripContainer1
+            // userlistbox
             // 
-            // 
-            // toolStripContainer1.ContentPanel
-            // 
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(150, 150);
-            this.toolStripContainer1.Location = new System.Drawing.Point(613, 177);
-            this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(150, 175);
-            this.toolStripContainer1.TabIndex = 10;
-            this.toolStripContainer1.Text = "toolStripContainer1";
+            this.userlistbox.Location = new System.Drawing.Point(553, 61);
+            this.userlistbox.Name = "userlistbox";
+            this.userlistbox.Size = new System.Drawing.Size(102, 309);
+            this.userlistbox.TabIndex = 10;
+            this.userlistbox.UseCompatibleStateImageBehavior = false;
+            this.userlistbox.View = System.Windows.Forms.View.List;
             // 
             // Man
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 401);
-            this.Controls.Add(this.toolStripContainer1);
+            this.Controls.Add(this.userlistbox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -157,12 +143,9 @@
             this.Controls.Add(this.ip);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.userlistbox);
             this.Controls.Add(this.messagebox);
             this.Name = "Man";
             this.Text = "Form1";
-            this.toolStripContainer1.ResumeLayout(false);
-            this.toolStripContainer1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,14 +155,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.RichTextBox messagebox;
-        public System.Windows.Forms.ListBox userlistbox;
         private System.Windows.Forms.TextBox ip;
         private System.Windows.Forms.TextBox port;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        public System.Windows.Forms.ListView userlistbox;
     }
 }
 

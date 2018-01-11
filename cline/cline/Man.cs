@@ -19,12 +19,14 @@ namespace cline
         string username;
         delegate void clineMsaage(string str);
         Socket clinesocet;
-        public Man(string ip,int port,string username)
+        Login login;
+        public Man(string ip,int port,string username,Login lgoin)
         {
             InitializeComponent();
             this.serverIp = ip;
             this.port = port;
             this.username = username;
+            this.login = lgoin;
             clinesocet = new Socket(AddressFamily.InterNetwork,SocketType.Stream,ProtocolType.Tcp);
             try
             {
@@ -67,20 +69,61 @@ namespace cline
            
         }
         public void ClineMsaage(string str) {
-            messagelist.AppendText("\n"+str + "\n");
-        }     
-        private void Man_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Login login = new Login();
-            login.Dispose();
-         
-            login.Close();
-            
-        }
+            string[] strs = str.Split('|');
+            string[] userlist;
+            switch (strs[0])
+            {
+                case "1001":
+                    messagelist.AppendText("\n" + strs[1] + "\n");
+                   userlist = strs[2].Split(',');
+                    clineuserlist.Items.Clear();
+                    foreach (var item in userlist)
+                    {                      
+                        clineuserlist.Items.Add(item.Split('-')[0], item.Split('-')[1], 0);
+                    }
+                    break;
+                case "1002":
+                    messagelist.AppendText("\n" + strs[1] + "\n");
+                    userlist = strs[2].Split(',');
+                    clineuserlist.Items.Clear();
+                    foreach (var item in userlist)
+                    {
+                        clineuserlist.Items.Add(item.Split('-')[0], item.Split('-')[1], 0);
+                    }
+                    break;
+                case "2001":                         
+                    messagelist.AppendText("\n\n" + strs[1] + "\n");                  
+                    break;
+            }
+          
+            messagelist.ScrollToCaret();
+        }          
 
         private void button1_Click(object sender, EventArgs e)
         {
-            clinesocet.Send(Encoding.UTF8.GetBytes("2001|" + clinesocet.LocalEndPoint.ToString() + "|" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "|" + username + "|"+cilneMesage.Text));
+            if (cilneMesage.Text != "")
+            {
+               
+                messagelist.AppendText("\n\n"+cilneMesage.Text);
+                //messagelist.SelectedText = "\n"+cilneMesage.Text;
+                messagelist.ScrollToCaret();
+                clinesocet.Send(Encoding.UTF8.GetBytes("2001|" + clinesocet.LocalEndPoint.ToString() + "|" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "|" + username + "|" + cilneMesage.Text));
+                cilneMesage.Text = "";
+
+            }
+
+           
+        }
+
+       
+
+        private void Man_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            login.Dispose();
+            login.Close();
+            clinesocet.Send(Encoding.UTF8.GetBytes("1002|" + clinesocet.LocalEndPoint.ToString() + "|" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "|" + username + "|"));
+            Environment.Exit(Environment.ExitCode);
         }
     }
  

@@ -21,7 +21,7 @@ namespace cline
         {
             if (username.Text != "" && ServerIp.Text != "" && prot_.Text != "")
             {
-                Man man = new Man(ServerIp.Text,Convert.ToInt32(prot_.Text),username.Text);
+                Man man = new Man(ServerIp.Text,Convert.ToInt32(prot_.Text),username.Text,this);
                 this.Visible = false; ;
                 man.ShowDialog();
                 

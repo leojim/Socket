@@ -31,7 +31,7 @@ namespace server
                 while (true)
                 {
                     Socket MessageSocket = serverSocket.Accept();
-                    UserSocket(MessageSocket);
+                    UserSocket(ip,MessageSocket);
                 }
             });
             task.Start();                                                                                           
@@ -39,18 +39,18 @@ namespace server
         }
 
 
-        public void UserSocket(object socket)
+        public void UserSocket(string ip,object socket)
         {
 
             
             Task task = new Task(() => {
-                Socket MessageSocket = socket as Socket;
-                
-                
+                Socket MessageSocket = socket as Socket;                              
                     while (true)
                     {
                          byte[] byte_ = new byte[1024 * 200];
-                         MessageSocket.Receive(byte_);
+                    try
+                    {
+                        MessageSocket.Receive(byte_);
                         string str = Encoding.UTF8.GetString(byte_);
                         if (man.InvokeRequired)
                         {
@@ -58,6 +58,20 @@ namespace server
                             man.BeginInvoke(msg, str, MessageSocket);
 
                         }
+                    }
+                    catch {
+                        MessageSocket.Close();
+                        MessageSocket.Dispose();
+                        userlist.Remove(ip);
+                        //foreach (ListViewItem item in man.userlistbox.Items)
+                        //{
+                        //    if (item.Name == ip)
+                        //    {
+                        //        man.userlistbox.Items.Remove(item);
+                        //    }
+                        //}
+                    }
+                        
                     }
                 
                 

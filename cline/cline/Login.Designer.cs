@@ -43,7 +43,7 @@
             this.ServerIp.Name = "ServerIp";
             this.ServerIp.Size = new System.Drawing.Size(163, 21);
             this.ServerIp.TabIndex = 0;
-            this.ServerIp.Text = "192.168.0.222";
+            this.ServerIp.Text = "39.108.181.28";
             // 
             // label1
             // 
@@ -60,7 +60,7 @@
             this.prot_.Name = "prot_";
             this.prot_.Size = new System.Drawing.Size(163, 21);
             this.prot_.TabIndex = 2;
-            this.prot_.Text = "5000";
+            this.prot_.Text = "6000";
             // 
             // label2
             // 
